@@ -31,4 +31,5 @@ require("lazy").setup({
 	require("plugins.comment"),
 	require("plugins.alpha"),
 	require("plugins.toggleterm"),
+	require("plugins.boilerplate"),
 })
