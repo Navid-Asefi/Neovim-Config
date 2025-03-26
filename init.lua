@@ -12,6 +12,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Split lines settings
+vim.o.laststatus = 3
+
 --Installed all my plugins here
 require("lazy").setup({
 	require("plugins.neotree"),
@@ -27,4 +30,5 @@ require("lazy").setup({
 	require("plugins.misc"),
 	require("plugins.comment"),
 	require("plugins.alpha"),
+	require("plugins.toggleterm"),
 })
