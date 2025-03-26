@@ -10,7 +10,16 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		-- Useful status updates for LSP.
-		{ "j-hui/fidget.nvim", opts = {} },
+		-- {
+		-- 	"j-hui/fidget.nvim",
+		-- 	config = function()
+		-- 		require("fidget").setup({
+		-- 			window = {
+		-- 				winblend = 0,
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- },
 
 		-- Allows extra capabilities provided by nvim-cmp
 		"hrsh7th/cmp-nvim-lsp",
