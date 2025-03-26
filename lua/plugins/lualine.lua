@@ -11,7 +11,7 @@ return {
 			red1 = "#e06c75",
 			red2 = "#be5046",
 			yellow = "#e5c07b",
-			fg = "#abb2bf",
+			fg = "#56b6c2",
 			bg = "#282c34",
 			gray1 = "#828997",
 			gray2 = "#2c323c",
@@ -43,6 +43,7 @@ return {
 		local themes = {
 			onedark = onedark_theme,
 			nord = "nord",
+			catppuccin = "catppuccin",
 		}
 
 		local mode = {
