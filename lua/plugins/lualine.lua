@@ -2,48 +2,56 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
-		-- Adapted from: https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/themes/onedark.lua
 		local colors = {
-			blue = "#61afef",
-			green = "#98c379",
-			purple = "#c678dd",
-			cyan = "#56b6c2",
-			red1 = "#e06c75",
-			red2 = "#be5046",
-			yellow = "#e5c07b",
-			fg = "#56b6c2",
-			bg = "#282c34",
-			gray1 = "#828997",
-			gray2 = "#2c323c",
-			gray3 = "#3e4452",
+			gray = "#44475a",
+			lightgray = "#5f6a8e",
+			orange = "#ffb86c",
+			purple = "#bd93f9",
+			red = "#ff5555",
+			yellow = "#f1fa8c",
+			green = "#50fa7b",
+			white = "#f8f8f2",
+			black = "#282a36",
 		}
 
-		local onedark_theme = {
+		local dracula = {
 			normal = {
-				a = { fg = colors.bg, bg = colors.green, gui = "bold" },
-				b = { fg = colors.fg, bg = colors.gray3 },
-				c = { fg = colors.fg, bg = colors.gray2 },
+				a = { bg = colors.purple, fg = colors.black, gui = "bold" },
+				b = { bg = colors.lightgray, fg = colors.white },
+				c = { bg = colors.gray, fg = colors.white },
 			},
-			command = { a = { fg = colors.bg, bg = colors.yellow, gui = "bold" } },
-			insert = { a = { fg = colors.bg, bg = colors.blue, gui = "bold" } },
-			visual = { a = { fg = colors.bg, bg = colors.purple, gui = "bold" } },
-			terminal = { a = { fg = colors.bg, bg = colors.cyan, gui = "bold" } },
-			replace = { a = { fg = colors.bg, bg = colors.red1, gui = "bold" } },
+			insert = {
+				a = { bg = colors.green, fg = colors.black, gui = "bold" },
+				b = { bg = colors.lightgray, fg = colors.white },
+				c = { bg = colors.gray, fg = colors.white },
+			},
+			visual = {
+				a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
+				b = { bg = colors.lightgray, fg = colors.white },
+				c = { bg = colors.gray, fg = colors.white },
+			},
+			replace = {
+				a = { bg = colors.red, fg = colors.black, gui = "bold" },
+				b = { bg = colors.lightgray, fg = colors.white },
+				c = { bg = colors.gray, fg = colors.white },
+			},
+			command = {
+				a = { bg = colors.orange, fg = colors.black, gui = "bold" },
+				b = { bg = colors.lightgray, fg = colors.white },
+				c = { bg = colors.gray, fg = colors.white },
+			},
 			inactive = {
-				a = { fg = colors.gray1, bg = colors.bg, gui = "bold" },
-				b = { fg = colors.gray1, bg = colors.bg },
-				c = { fg = colors.gray1, bg = colors.gray2 },
+				a = { bg = colors.gray, fg = colors.white, gui = "bold" },
+				b = { bg = colors.lightgray, fg = colors.white },
+				c = { bg = colors.gray, fg = colors.white },
 			},
 		}
-
 		-- Import color theme based on environment variable NVIM_THEME
-		local env_var_nvim_theme = os.getenv("NVIM_THEME") or "catppuccin"
+		local env_var_nvim_theme = os.getenv("NVIM_THEME") or "drac"
 
 		-- Define a table of themes
 		local themes = {
-			onedark = onedark_theme,
-			nord = "nord",
-			catppuccin = "catppuccin",
+			drac = dracula,
 		}
 
 		local mode = {
@@ -85,7 +93,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = themes[env_var_nvim_theme], -- Set theme based on environment variable
+				theme = dracula, -- Set theme based on environment variable
 				-- Some useful glyphs:
 				-- https://www.nerdfonts.com/cheat-sheet
 				--        
