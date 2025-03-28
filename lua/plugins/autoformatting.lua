@@ -26,7 +26,7 @@ return {
 
         local sources = {
             diagnostics.checkmake,
-            null_ls.builtins.formatting.clang_format,
+            null_ls.builtins.formatting.clang_format.with({ extra_args = { "--style=WebKit" } }),
             formatting.stylua,
             formatting.shfmt.with({ args = { "-i", "4" } }),
             require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
