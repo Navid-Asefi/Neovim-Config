@@ -48,20 +48,21 @@ return {
                 maximum_length = 15,
                 sort_by = "insert_at_end",
             },
-            highlights = {
-                separator = {
-                    fg = "#494d64",
-                },
-                buffer_selected = {
-                    bold = true,
-                    italic = false,
-                },
-                -- separator_selected = {},
-                -- tab_selected = {},
-                -- background = {},
-                -- indicator_selected = {},
-                -- fill = {},
-            },
+            -- highlights = {
+            --     separator = {
+            --         fg = "#494d64",
+            --     },
+            --     buffer_selected = {
+            --         bold = true,
+            --         italic = false,
+            --     },
+            -- separator_selected = {},
+            -- tab_selected = {},
+            -- background = {},
+            -- indicator_selected = {},
+            -- fill = {},
+            -- },
+            highlights = require("catppuccin.groups.integrations.bufferline").get(),
         })
 
         -- Keymaps

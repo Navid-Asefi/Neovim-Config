@@ -37,7 +37,6 @@ return {
 				-- miscs = {}, -- Uncomment to turn off hard-coded styles
 			},
 			color_overrides = {},
-			custom_highlights = {},
 			default_integrations = true,
 			integrations = {
 				cmp = true,
